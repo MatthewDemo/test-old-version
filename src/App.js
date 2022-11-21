@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+import Table from './Table';
+import { CellContext } from './context/CellContext';
+import { useContext } from 'react';
+
 
 function App() {
+
+  const {makeRows, makeColumns, rows, columns} = useContext(CellContext)
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className="inputs">
+        <input type="number" placeholder='Строк' onChange={(e) => makeRows(e.target.value)} />
+        <input type="number" placeholder='Столбцов' onChange={(e) => makeColumns(e.target.value)} />
+        {/* <input type="number" placeholder='Ближайших элементов' onChange={event => setNearest(event.target.value)} /> */}
+      </div>
+      <Table rows={rows} columns={columns} />
     </div>
   );
 }
