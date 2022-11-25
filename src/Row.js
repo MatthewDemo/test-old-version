@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 const Row = ({columns}) => {
 
     const sumRef = useRef()
+
     useEffect(() => {
         if (sumRef.current) {
                 let cells = Array.from(sumRef.current.parentNode.children)

@@ -10,7 +10,6 @@ const CellContextProvider = ({ children }) => {
     const [rows, setRows] = React.useState([]);
     const [columns, setColumns] = React.useState([]);
     const [colArr, setColArr] = React.useState([]);
-
     // const [nearest, setNearest] = React.useState(0);
   
     useEffect(() => {
@@ -29,7 +28,6 @@ const CellContextProvider = ({ children }) => {
       const arr1 = [];
       for (let k = 0; k < number1; k++) {
         let randomNumber = Math.floor(100 + Math.random() * (999 + 1 - 100));
-        console.log(randomNumber)
         arr1.push(<React.Fragment key={uuidv4()}><Cell>{randomNumber}</Cell></React.Fragment>)
       }
       setColumns(arr1)
